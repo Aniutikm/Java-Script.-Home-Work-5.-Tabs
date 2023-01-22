@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Java Script. Tabs</title>
+   <style>
+    .tabs{
+        display: flex;
+    }
+    .tabs-item{
+        border: 1px solid rgb(36, 78, 170);
+        border-radius: 30%;
+        width: 20%;
+        margin: 0 auto;
+        background: rgb(115, 164, 220);
+        font-size: 2rem;
+        text-align: center;
+    }
+    .tabs-item-content{
+        border-radius: 30%;
+        background-color: rgb(107, 224, 245);
+        transition: 1s;
+		overflow: hidden;
+		height: 150px;
+        margin: 10px;
+    }
+    .tabs-item-content>h3, p{
+       text-align: center;
+    }
+    .hide{
+        height: 0px;
+    }
+   </style>
+</head>
+
+<body>
+    <div class="tabs">
+        <div>
+        <div class="tabs-item">Tab 1</div>
+        <div class="tabs-item-content hide">
+            <h3>Tab 1 Content</h3>
+            <p>This example uses progressive
+                enchancement techniques to create a tabbed content box.</p>
+            </div>
+        </div>
+        <div>
+        <div class="tabs-item">Tab 2</div>
+        <div class="tabs-item-content hide">
+            <h3>Tab 1 Content</h3>
+            <p>This example uses progressive
+                enchancement techniques to create a tabbed content box.</p>
+        </div>
+    </div>
+    <div>
+        <div class="tabs-item">Tab 3</div>
+        <div class="tabs-item-content hide">
+            <h3>Tab 1 Content</h3>
+            <p>This example uses progressive
+                enchancement techniques to create a tabbed content box.</p>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+var tabsItem = document.querySelectorAll('.tabs-item');
+
+for(var i = 0; i < tabsItem.length; i++)
+{
+    tabsItem[i].addEventListener('click', showItemContent);
+}
+function showItemContent()
+{
+    this.nextElementSibling.classList.toggle('hide');
+}
+       
+       
+    </script>
+</body>
+</html>
