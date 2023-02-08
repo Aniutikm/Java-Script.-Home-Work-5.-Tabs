@@ -2,96 +2,100 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Java Script. Tabs</title>
-   <style>
-    .tabs{
-        display: block;
-    }
-    .buttons{
-        display: flex;
-    }
-    .tabs-item{
-        border: 1px solid rgb(36, 78, 170);
-        border-radius: 30%;
-        width: 20%;
-        margin: 0 auto;
-        background: rgb(115, 164, 220);
-        font-size: 2rem;
-        text-align: center;
-    }
-    .tabs-item-content{
-        border-radius: 30%;
-        background-color: rgb(107, 224, 245);
-		display: none;
-		height: 150px;
-        margin: 10px;
-        text-align: center;
-    }
-   
-    .active-item{
-        background-color: azure;
-    }
-    .active-content{
-        display: block;
-    }
-   </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script. Tabs</title>
+    <style>
+        .tabs {
+            display: block;
+        }
+
+        .buttons {
+            display: flex;
+        }
+
+        .tabs-item {
+            border: 1px solid rgb(36, 78, 170);
+            border-radius: 30%;
+            width: 20%;
+            margin: 0 auto;
+            background: rgb(115, 164, 220);
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .tabs-item-content {
+            border-radius: 30%;
+            background-color: rgb(107, 224, 245);
+            display: none;
+            height: 150px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .active-item {
+            background-color: azure;
+        }
+
+        .active-content {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
     <div class="tabs">
         <div class="buttons">
 
-        <button class="tabs-item active-item" type="button">Tab 1</button>
-        <button class="tabs-item" type="button">Tab 2</button>
-        <button class="tabs-item" type="button">Tab 3</button>
+            <button class="tabs-item active-item" type="button">Tab 1</button>
+            <button class="tabs-item" type="button">Tab 2</button>
+            <button class="tabs-item" type="button">Tab 3</button>
 
         </div>
 
-        
-            <div class="tabs-item-content active-content">
-                This example uses progressive
-                    enchancement techniques to create a tabbed content box.
-                </div>
-                <div class="tabs-item-content">
-                    This example uses progressive
-                        enchancement techniques to create a tabbed content box.
-                </div>
-                <div class="tabs-item-content">
-                    This example uses progressive
-                        enchancement techniques to create a tabbed content box.
-                </div>
-       
-       
+
+        <div class="tabs-item-content active-content">
+            Tab1. This example uses progressive
+            enchancement techniques to create a tabbed content box.
+        </div>
+        <div class="tabs-item-content">
+            Tab2. This example uses progressive
+            enchancement techniques to create a tabbed content box.
+        </div>
+        <div class="tabs-item-content">
+            Tab3. This example uses progressive
+            enchancement techniques to create a tabbed content box.
+        </div>
+
+
     </div>
 
     <script type="text/javascript">
-var tabsItem = document.querySelectorAll('.tabs-item');
-var tabsItemContent = document.querySelectorAll('.tabs-item-content');
+        var tabsItem = document.querySelectorAll('.tabs-item');
+        var tabsItemContent = document.querySelectorAll('.tabs-item-content');
 
-for(var i = 0; i < tabsItem.length; i++)
-{
-    tabsItem[i].addEventListener('click', showItemContent);
-}
-function showItemContent()
-{
-        for (let i = 0; i < tabsItem.length; i++) {
-            tabsItem[i].classList.remove('active-item');
-            tabsItemContent[i].classList.remove('active-content');
+        for (var i = 0; i < tabsItem.length; i++) {
+            tabsItem[i].addEventListener('click', showItemContent);
         }
-        
-        tabsItem[i].classList.add('active-item');
-        tabsItemContent[i].classList.add('active-content');
-};
-    
+        function showItemContent() {
+            for (var i = 0; i < tabsItem.length; i++) {
+                tabsItem[i].classList.remove('active-item');
+                tabsItemContent[i].classList.remove('active-content');
+                this.classList.add('active-item');
+                tabsItemContent[i].classList.add('active-content');
+            }
+
+
+        };
 
 
 
 
-       
-       
+
+
+
     </script>
 </body>
+
 </html>
