@@ -27,6 +27,7 @@
 
         .tabs-item-content {
             border-radius: 30%;
+            font-size: 30px;
             background-color: rgb(107, 224, 245);
             display: none;
             height: 150px;
@@ -39,7 +40,9 @@
         }
 
         .active-content {
-            display: block;
+            justify-content: center;
+            align-items: center;
+            display: flex;
         }
     </style>
 </head>
@@ -82,12 +85,18 @@
             for (var i = 0; i < tabsItem.length; i++) {
                 tabsItem[i].classList.remove('active-item');
                 tabsItemContent[i].classList.remove('active-content');
-                this.classList.add('active-item');
-                tabsItemContent[i].classList.add('active-content');
             }
+            this.classList.add('active-item');
+
+            for (var i = 0; i < tabsItem.length; i++) {
+                if (tabsItem[i].classList.contains('active-item')) {
+
+                    tabsItemContent[i].classList.add('active-content');
 
 
-        };
+                };
+            }
+        }
 
 
 
